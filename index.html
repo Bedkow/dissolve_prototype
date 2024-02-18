@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="icon" type="image/x-icon" href="/logo.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dissolve Prototype</title>
 	</head>
@@ -21,13 +21,23 @@
 				<a href="#" class="link link--like-button"
 					><img src="./src/assets/heart-regular.svg" alt="like"
 				/></a>
-				<span class="menu menu--mobile">
-					<span class="menu__trigger">
+				<div class="menu menu--mobile">
+					<span class="menu__trigger" id="menu__trigger">
+						<!--  -->
+						<!-- <input type="checkbox" /> -->
 						<span class="trigger trigger--upper"></span>
 						<span class="trigger trigger--middle"></span>
 						<span class="trigger trigger--lower"></span>
 					</span>
-				</span>
+
+					<nav class="menu__nav--mobile" id="menu__nav--mobile">
+						<ul class="nav__links-container">
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Our Stories</a></li>
+							<li><a href="#">Our values</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</header>
 		<main>
@@ -37,6 +47,7 @@
 					<img
 						class="image-container--with-backdrop__main-image"
 						src="./src/assets/naassom-azevedo.jpg"
+						alt=""
 					/>
 				</div>
 				<div class="content-container">
@@ -57,7 +68,28 @@
 					</p>
 					<button class="CTA CTA--narrow">Find out more here</button>
 				</div>
-				<div class="image-container image-container--grid"></div>
+				<div class="image-container image-container--grid">
+					<img
+						src="./src/assets/benigno-hoyuela.jpg"
+						class="grid-image grid-image--left"
+						alt=""
+					/>
+					<img
+						src="./src/assets/emmanuel-akinte.jpg"
+						class="grid-image grid-image--center--upper"
+						alt=""
+					/>
+					<img
+						src="./src/assets/mike-baker.jpg"
+						class="grid-image grid-image--center--lower"
+						alt=""
+					/>
+					<img
+						src="./src/assets/brooke-cagle.jpg"
+						class="grid-image grid-image--right"
+						alt=""
+					/>
+				</div>
 			</section>
 		</main>
 
