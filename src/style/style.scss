@@ -1,5 +1,17 @@
 @import "./theme/variables.scss", "./theme/fonts.scss";
 
+@mixin tablet-res {
+	@media screen and (min-width: 700px) {
+		@content;
+	}
+}
+
+@mixin desktop-res {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -36,6 +48,10 @@ h1 {
 	font-family: ubuntu-medium;
 	font-weight: 500;
 	line-height: 35.58px;
+	@include desktop-res {
+		font-size: 40px;
+		line-height: 56.93px;
+	}
 }
 
 h2 {
@@ -43,6 +59,21 @@ h2 {
 	font-family: ubuntu;
 	font-weight: 400;
 	line-height: 28.46px;
+	@include desktop-res {
+		font-size: 30px;
+		line-height: 42.7px;
+	}
+}
+
+p {
+	@include desktop-res {
+		font-size: 18px;
+		line-height: 25.62px;
+	}
+}
+
+.logo-link {
+	height: 39px;
 }
 
 .section {
@@ -50,6 +81,15 @@ h2 {
 
 	&--dark {
 		background-color: #d9d9d9;
+	}
+
+	@include desktop-res {
+		display: flex;
+		flex-direction: row;
+
+		&--dark {
+			background-color: $color-secondary;
+		}
 	}
 }
 
@@ -74,6 +114,10 @@ h2 {
 	background-color: #ffffff;
 	font-size: 14px;
 	margin: 0 auto;
+
+	@include desktop-res {
+		margin: 0;
+	}
 
 	&--narrow {
 		width: 166px;
@@ -115,20 +159,50 @@ h2 {
 			background-color: $color-primary;
 			width: 100vw;
 			height: calc(100vh - $header-height);
+			z-index: 5;
 
 			&.active {
 				translate: 0;
 			}
 
-			// hidden class added by TS after 500ms to prevent body overflow and vertical scroll
+			// hidden class added by TS after 500ms to prevent body overflow and horizontal scroll
 			&.hidden {
 				display: none;
+			}
+		}
+
+		&--desktop {
+			display: none;
+
+			@include desktop-res {
+				display: block;
+			}
+
+			.nav__links-container {
+				display: flex;
+				flex-direction: row;
+
+				list-style: none;
+
+				gap: 26px;
+
+				a {
+					text-decoration: none;
+					color: #000000;
+					font-family: opensans;
+					font-size: 16px;
+					font-weight: 600;
+				}
 			}
 		}
 	}
 
 	&--mobile {
 		height: 26px;
+
+		@include desktop-res {
+			display: none;
+		}
 
 		.menu__trigger {
 			display: flex;
@@ -185,17 +259,53 @@ h2 {
 		flex-direction: column;
 		align-items: center;
 		padding-bottom: 26px;
+		@include tablet-res {
+			display: block;
+			height: fit-content;
+			width: fit-content;
+			margin: 50px auto;
+		}
+		@include desktop-res {
+			margin-left: 100px; //
+			width: 700px;
+		}
 		&__main-image {
+			z-index: 3;
 			max-width: 213px;
 			height: auto;
 			position: absolute;
 			top: 10px;
 			box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.15);
+			@include tablet-res {
+				translate: 15% 15%;
+				max-width: 380px;
+			}
+			@include desktop-res {
+				translate: 25% 15%;
+			}
+		}
+		&__secondary-image {
+			display: none;
+			z-index: 2;
+			max-width: 213px;
+			height: auto;
+			position: absolute;
+			top: 10px;
+			@include tablet-res {
+				display: block;
+				max-width: 380px;
+				translate: -25% -15%;
+			}
 		}
 		&__backdrop {
 			width: 268px;
 			height: 182px;
 			background-color: $color-primary;
+			z-index: 1;
+			@include tablet-res {
+				width: 330px;
+				height: 330px;
+			}
 		}
 	}
 
@@ -243,4 +353,8 @@ h2 {
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 26px;
+	@include desktop-res {
+		justify-content: center;
+		text-align: left;
+	}
 }
