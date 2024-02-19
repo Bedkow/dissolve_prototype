@@ -6,6 +6,7 @@ const navLinksMobile: NodeListOf<Element> =
 
 mobileNav.classList.add("hidden");
 mobileNav.style.visibility = "hidden";
+mobileNav.setAttribute("aria-hidden", "true");
 
 const toggleMobileMenu = () => {
 	menuTrigger?.classList.toggle("active");
@@ -26,14 +27,17 @@ const toggleMobileMenu = () => {
 		});
 	}
 
-	if ((mobileNav.style.visibility = "hidden")) {
+	if (mobileNav.classList.contains("hidden")) {
 		mobileNav.style.visibility = "visible";
+		mobileNav.classList.remove("hidden");
+		mobileNav.setAttribute("aria-hidden", "false");
 	} else {
+		mobileNav.classList.add("hidden");
 		// prevent clicking on hamburger during animation
 		menuTrigger.style.pointerEvents = "none";
 		setTimeout(() => {
 			mobileNav.style.visibility = "hidden";
-
+			mobileNav.setAttribute("aria-hidden", "true");
 			//allow clicking on hamburger
 			menuTrigger.style.pointerEvents = "auto";
 		}, 500);
@@ -41,9 +45,9 @@ const toggleMobileMenu = () => {
 };
 
 menuTrigger?.addEventListener("click", () => {
-	toggleMobileMenu();
+	return toggleMobileMenu();
 });
 
 menuTrigger?.addEventListener("keypress", (e: KeyboardEvent) => {
-	e.key === "Enter" ? toggleMobileMenu() : null;
+	return e.key === "Enter" ? toggleMobileMenu() : null;
 });
