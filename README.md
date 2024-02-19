@@ -22,6 +22,6 @@
 
 ### project built and developed with:
 
-- Vite
+- Vite (with image optimizer plugin (uses SVGO and Sharp))
 - TypeScript
 - SCSS/SASS

@@ -1,4 +1,4 @@
-@import "./theme/variables.scss", "./theme/fonts.scss";
+@import "./theme/variables.scss";
 
 @mixin tablet-res {
 	@media screen and (min-width: 700px) {
@@ -26,7 +26,7 @@ body {
 
 body {
 	max-width: 100vw;
-	font-family: opensans;
+	font-family: opensans sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	overflow-x: hidden;
