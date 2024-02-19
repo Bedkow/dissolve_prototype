@@ -1,3 +1,8 @@
-export default {
-	assetsInclude: ["**/*.ttf"],
-};
+import { defineConfig } from "vite";
+
+export default defineConfig({
+	build: {
+		minify: true,
+		target: "es2015",
+	},
+});

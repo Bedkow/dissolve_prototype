@@ -94,22 +94,28 @@ p {
 	}
 }
 
+.link {
+	&--search-button,
+	&--like-button {
+		height: 31px;
+	}
+}
+
 .section {
 	padding: 26px;
 
 	&--dark {
 		background-color: #d9d9d9;
-	}
 
-	@include desktop-res {
-		// padding: 26px;
-		display: flex;
-		flex-direction: row;
-		gap: 26px;
-		justify-content: center;
+		@include desktop-res {
+			display: flex;
+			flex-direction: row;
+			gap: 26px;
+			justify-content: center;
 
-		&--dark {
-			background-color: $color-secondary;
+			&--dark {
+				background-color: $color-secondary;
+			}
 		}
 	}
 }
@@ -122,6 +128,10 @@ p {
 		justify-content: center;
 		margin: 0 auto;
 		max-width: 1600px;
+
+		.section--dark & {
+			gap: 50px;
+		}
 	}
 }
 
@@ -150,6 +160,7 @@ p {
 	background-color: #ffffff;
 	font-size: 14px;
 	margin: 0 auto;
+	font-family: ubuntu;
 
 	&:focus {
 		outline: 2px solid $color-primary;
@@ -365,7 +376,7 @@ p {
 
 		@include desktop-res {
 			grid-template-columns: 1fr 1fr 1fr;
-			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
 			max-width: 700px;
 		}
 	}

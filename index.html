@@ -3,12 +3,30 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/x-icon" href="/logo.ico" />
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/OpenSans-VariableFont.ttf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/Ubuntu-Medium.ttf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/Ubuntu-Regular.ttf"
+			crossorigin="anonymous"
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dissolve Prototype</title>
 	</head>
 	<body>
 		<header>
-			<a href="#" class="logo-link"
+			<a href="#" class="logo-link" role="link"
 				><img
 					src="./src/assets/logo.png"
 					alt="company logo, click to go to homepage"
@@ -16,27 +34,40 @@
 			/></a>
 
 			<div class="header-buttons-container">
-				<nav class="menu__nav--desktop" id="menu__nav--desktop">
+				<nav
+					class="menu__nav--desktop"
+					role="navigation"
+					id="menu__nav--desktop"
+				>
 					<ul class="nav__links-container">
 						<li><a href="#">About us</a></li>
 						<li><a href="#">Our Stories</a></li>
 						<li><a href="#">Our values</a></li>
 					</ul>
 				</nav>
-				<a href="#" class="link link--search-button"
+				<a href="#" class="link link--search-button" role="menuitem"
 					><img src="./src/assets/mag-glass.svg" alt="search"
 				/></a>
-				<a href="#" class="link link--like-button"
+				<a href="#" class="link link--like-button" role="menuitem"
 					><img src="./src/assets/heart-regular.svg" alt="like"
 				/></a>
 				<div class="menu menu--mobile">
-					<span class="menu__trigger" id="menu__trigger" tabindex="0">
+					<span
+						class="menu__trigger"
+						id="menu__trigger"
+						tabindex="0"
+						aria-label="open the menu"
+					>
 						<span class="trigger trigger--upper"></span>
 						<span class="trigger trigger--middle"></span>
 						<span class="trigger trigger--lower"></span>
 					</span>
 
-					<nav class="menu__nav--mobile" id="menu__nav--mobile">
+					<nav
+						class="menu__nav--mobile"
+						role="navigation"
+						id="menu__nav--mobile"
+					>
 						<ul class="nav__links-container">
 							<li><a href="#">About us</a></li>
 							<li><a href="#">Our Stories</a></li>

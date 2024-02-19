@@ -30,7 +30,7 @@ menuTrigger?.addEventListener("click", () => {
 	}
 });
 
-menuTrigger?.addEventListener("keypress", (e: any) => {
+menuTrigger?.addEventListener("keypress", () => {
 	menuTrigger?.classList.toggle("active");
 	mobileNav?.classList.toggle("active");
 
