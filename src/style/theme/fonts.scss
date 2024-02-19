@@ -1,13 +1,15 @@
 @font-face {
 	font-family: "opensans";
-	src: url("/fonts/OpenSans-VariableFont.ttf") format("truetype");
+	src: url("/fonts/OpenSans-VariableFont.woff2") format("woff2"),
+		url("/fonts/OpenSans-VariableFont.ttf") format("truetype");
 	unicode-range: U+000-5FF;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: "ubuntu";
-	src: url("/fonts/Ubuntu-Regular.ttf") format("truetype");
+	src: url("/fonts/Ubuntu-Regular.woff2") format("woff2"),
+		url("/fonts/Ubuntu-Regular.ttf") format("truetype");
 	font-weight: 400;
 	unicode-range: U+000-5FF;
 	font-display: swap;
@@ -15,7 +17,8 @@
 
 @font-face {
 	font-family: "ubuntu-medium";
-	src: url("/fonts/Ubuntu-Medium.ttf") format("truetype");
+	src: url("/fonts/Ubuntu-Medium.woff2") format("woff2"),
+		url("/fonts/Ubuntu-Medium.ttf") format("truetype");
 	font-weight: 500;
 	unicode-range: U+000-5FF;
 	font-display: swap;
