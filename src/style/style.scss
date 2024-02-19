@@ -25,6 +25,7 @@ body {
 }
 
 body {
+	max-width: 100vw;
 	font-family: opensans;
 	font-weight: 400;
 	font-size: 18px;
@@ -194,15 +195,15 @@ p {
 			text-decoration: none;
 			color: #ffffff;
 			font-family: opensans;
-			size: 20px;
+			font-size: 20px;
 			line-height: 44.16px;
+			font-weight: 600;
 		}
 	}
 
 	&__nav {
 		&--mobile {
-			translate: 100%;
-			transition: translate ease-out (0.5s);
+			transition: transform 0.5s;
 			position: absolute;
 			left: 0;
 			top: $header-height-mobile;
@@ -211,14 +212,13 @@ p {
 			width: 100vw;
 			height: calc(100vh - $header-height-mobile);
 			z-index: 5;
+			overflow: hidden;
+			transform-origin: right;
+			transform: scaleX(0);
 
 			&.active {
-				translate: 0;
-			}
-
-			// hidden class added by TS after 500ms to prevent body overflow and horizontal scroll
-			&.hidden {
-				display: none;
+				transform: scaleX(1);
+				transform-origin: right;
 			}
 		}
 
@@ -232,9 +232,8 @@ p {
 			.nav__links-container {
 				display: flex;
 				flex-direction: row;
-
+				align-items: center;
 				list-style: none;
-
 				gap: 26px;
 
 				a {
@@ -442,13 +441,11 @@ p {
 	@include desktop-res {
 		justify-content: center;
 		text-align: left;
-		// max-width: 900px;
 	}
 }
 
 .modal-blur {
 	display: none;
-	// filter: blur(0);
 	position: fixed;
 
 	&.modal-active {
@@ -459,9 +456,7 @@ p {
 		top: 0;
 		left: 0;
 		background-color: rgba(0, 0, 0, 0.7);
-		// opacity: 70%;
 		z-index: 6;
-		// filter: blur(none);
 	}
 
 	.modal {
