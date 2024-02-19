@@ -88,6 +88,10 @@ p {
 
 .logo-link {
 	height: 39px;
+
+	@include desktop-res {
+		height: 53.2px;
+	}
 }
 
 .section {
@@ -98,13 +102,26 @@ p {
 	}
 
 	@include desktop-res {
+		// padding: 26px;
 		display: flex;
 		flex-direction: row;
 		gap: 26px;
+		justify-content: center;
 
 		&--dark {
 			background-color: $color-secondary;
 		}
+	}
+}
+
+.section__content-wrapper {
+	@include desktop-res {
+		display: flex;
+		flex-direction: row;
+		gap: 26px;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 1600px;
 	}
 }
 
@@ -133,6 +150,10 @@ p {
 	background-color: #ffffff;
 	font-size: 14px;
 	margin: 0 auto;
+
+	&:focus {
+		outline: 2px solid $color-primary;
+	}
 
 	@include desktop-res {
 		margin: 0;
@@ -336,10 +357,16 @@ p {
 		grid-template-rows: 1fr 1fr;
 		width: 100%;
 		gap: 15px;
+		margin: 0 auto;
+
+		@include tablet-res {
+			max-width: 700px;
+		}
 
 		@include desktop-res {
 			grid-template-columns: 1fr 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
+			max-width: 700px;
 		}
 	}
 }
@@ -404,6 +431,7 @@ p {
 	@include desktop-res {
 		justify-content: center;
 		text-align: left;
+		// max-width: 900px;
 	}
 }
 
@@ -427,23 +455,73 @@ p {
 
 	.modal {
 		position: relative;
-		width: 200px;
-		height: 200px;
+		width: 100vw;
+		height: $modal-height-desktop;
 		background-color: $color-primary;
+		left: 2%;
+		top: 25%;
+		border: none;
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			margin: 50px;
+			font-family: ubuntu-medium;
+			font-weight: 500;
+
+			color: #ffffff;
+		}
+
+		.modal-content {
+			&__header {
+				font-size: 30px;
+				margin-bottom: 30px;
+				word-wrap: break-word;
+			}
+			&__name-input {
+				max-width: 521px;
+				height: 58px;
+				border: none;
+				border-radius: 29px;
+				padding: 0 25px;
+				font-size: 30px;
+				font-family: ubuntu-medium;
+
+				&-label {
+					margin: 0 0 3px 25px;
+				}
+			}
+		}
+
+		@include desktop-res {
+			width: $modal-width-dekstop;
+			height: $modal-height-desktop;
+			left: calc(50% - $modal-width-dekstop/2);
+			top: 25%;
+		}
 	}
 
 	.close-modal {
 		display: block;
 		position: relative;
-		top: 50px;
-		left: 50px;
-		width: 50px;
-		height: 50px;
-		color: red;
-		border: 5px solid red;
+		top: calc(0% + 15px);
+		left: 80%;
+		width: 25px;
+		height: 25px;
+		color: #ffffff;
+		border: none;
 		z-index: 10;
-		background-color: #000000;
-		// opacity: 100%;
-		// filter: blur(none);
+		background-color: $color-primary;
+		cursor: pointer;
+
+		@include desktop-res {
+			top: calc(0% + 15px);
+			left: calc(100% - 40px);
+		}
+
+		img {
+			width: 25px;
+			height: 25px;
+		}
 	}
 }

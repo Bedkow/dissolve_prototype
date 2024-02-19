@@ -30,7 +30,7 @@
 					><img src="./src/assets/heart-regular.svg" alt="like"
 				/></a>
 				<div class="menu menu--mobile">
-					<span class="menu__trigger" id="menu__trigger">
+					<span class="menu__trigger" id="menu__trigger" tabindex="0">
 						<span class="trigger trigger--upper"></span>
 						<span class="trigger trigger--middle"></span>
 						<span class="trigger trigger--lower"></span>
@@ -48,69 +48,92 @@
 		</header>
 		<main>
 			<section class="section section--light">
-				<div class="image-container image-container--with-backdrop">
-					<div class="image-container--with-backdrop__backdrop"></div>
-					<img
-						class="image-container--with-backdrop__main-image"
-						src="./src/assets/naassom-azevedo.jpg"
-						alt=""
-					/>
-					<img
-						class="image-container--with-backdrop__secondary-image"
-						src="./src/assets/husna-miskandar.jpg"
-						alt=""
-					/>
-				</div>
-				<div class="content-container">
-					<h1>Working together to make a better tomorrow!</h1>
-					<h2>Breaking down the barriers and opening opportunities.</h2>
-					<button class="CTA" id="register-interest-btn">
-						Click here to register your interest
-					</button>
+				<div class="section__content-wrapper">
+					<div class="image-container image-container--with-backdrop">
+						<div class="image-container--with-backdrop__backdrop"></div>
+						<img
+							class="image-container--with-backdrop__main-image"
+							src="./src/assets/naassom-azevedo.jpg"
+							alt=""
+						/>
+						<img
+							class="image-container--with-backdrop__secondary-image"
+							src="./src/assets/husna-miskandar.jpg"
+							alt=""
+						/>
+					</div>
+					<div class="content-container">
+						<h1>Working together to make a better tomorrow!</h1>
+						<h2>Breaking down the barriers and opening opportunities.</h2>
+						<button class="CTA" id="register-interest-btn">
+							Click here to register your interest
+						</button>
+					</div>
 				</div>
 			</section>
 
 			<section class="section section--dark">
-				<div class="content-container">
-					<h2>There's more than just one way to make a difference.</h2>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-						mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-						fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-						vitae mattis tellus..
-					</p>
-					<button class="CTA CTA--narrow">Find out more here</button>
-				</div>
-				<div class="image-container image-container--grid">
-					<img
-						src="./src/assets/benigno-hoyuela.jpg"
-						class="grid-image grid-image--left"
-						alt=""
-					/>
-					<img
-						src="./src/assets/emmanuel-akinte.jpg"
-						class="grid-image grid-image--center--upper"
-						alt=""
-					/>
-					<img
-						src="./src/assets/mike-baker.jpg"
-						class="grid-image grid-image--center--lower"
-						alt=""
-					/>
-					<img
-						src="./src/assets/brooke-cagle.jpg"
-						class="grid-image grid-image--right"
-						alt=""
-					/>
+				<div class="section__content-wrapper">
+					<div class="content-container">
+						<h2>There's more than just one way to make a difference.</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+							mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+							fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
+							vitae mattis tellus..
+						</p>
+						<button class="CTA CTA--narrow">Find out more here</button>
+					</div>
+					<div class="image-container image-container--grid">
+						<img
+							src="./src/assets/benigno-hoyuela.jpg"
+							class="grid-image grid-image--left"
+							alt=""
+						/>
+						<img
+							src="./src/assets/emmanuel-akinte.jpg"
+							class="grid-image grid-image--center--upper"
+							alt=""
+						/>
+						<img
+							src="./src/assets/mike-baker.jpg"
+							class="grid-image grid-image--center--lower"
+							alt=""
+						/>
+						<img
+							src="./src/assets/brooke-cagle.jpg"
+							class="grid-image grid-image--right"
+							alt=""
+						/>
+					</div>
 				</div>
 			</section>
 		</main>
 
 		<div class="modal-blur" id="modal-blur">
-			<div class="modal" id="modal">
-				<button class="close-modal" id="close-modal">X</button>
-				Modal
-			</div>
+			<dialog class="modal" id="modal">
+				<button class="close-modal" id="close-modal">
+					<img src="./src/assets/close-button.svg" alt="close modal window" />
+				</button>
+				<div class="modal__content">
+					<p class="modal-content__header">
+						Welcome
+						<span
+							class="modal-header__name-container"
+							id="modal-header__name-container"
+						></span>
+					</p>
+					<label for="name-input" class="modal-content__name-input-label"
+						>Please enter your name</label
+					>
+					<input
+						maxlength="50"
+						type="text"
+						id="name-input"
+						class="modal-content__name-input"
+					/>
+				</div>
+			</dialog>
 		</div>
 
 		<script type="module" src="/src/main.ts"></script>
