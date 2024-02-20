@@ -25,3 +25,7 @@
 - Vite (with image optimizer plugin (uses SVGO and Sharp))
 - TypeScript
 - SCSS/SASS
+
+### website navigation
+
+Website can be navigated using both mouse and keyboard (tab, shift+tab, enter)
